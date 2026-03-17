@@ -1,5 +1,6 @@
 const startBtn = document.getElementById("startBtn");
 const stopBtn = document.getElementById("stopBtn");
+const resetBtn = document.getElementById("resetBtn");
 const timer = document.getElementById("timer");
 
 let seconds = 0;
@@ -30,7 +31,14 @@ function stopTimer() {
     interval = null;
 }
 
+function resetTimer() {
+    stopTimer();
+    seconds = 0;
+    updateTimer();
+}
+
 startBtn.addEventListener("click", startTimer);
 stopBtn.addEventListener("click", stopTimer);
+resetBtn.addEventListener("click", resetTimer);
 
 updateTimer();
